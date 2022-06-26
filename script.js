@@ -5,14 +5,10 @@ function init() {
 
 function showQuestion() {
     if (currentquestion >= questions.length) {
-        lastQuestion();
-        endDetails();  
-        audio_win.play();   
+        showEndScreen();
+        audio_win.play();
     } else {
-        let percent = (currentquestion + 1) / questions.length;
-        percent = Math.round(percent * 100);
-        document.getElementById('progress-bar').innerHTML = `${percent}%`;
-        document.getElementById('progress-bar').style = `width: ${percent}%`;
+        progressBarInPercent();
         furtherQuestions();
     }
 }
@@ -29,8 +25,8 @@ function answer(selection) { // Die Variable "selection" wurde bereits im HTML C
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger'); // Wenn die Auswahl falsch war, erscheint die übergeordnete Klasse in der Farbe ROT.
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success'); // Gleichzeitig wird damit die richtige Antwort als GRÜN hervorgehoben.  
-        audio_error.play();       
-    }    
+        audio_error.play();
+    }
     document.getElementById('next-button').disabled = false; // Der "Nächste Frage" Button wird bis zu einer Auswahl deaktiviert.
 }
 
@@ -62,19 +58,21 @@ function resetAnswer() { // Damit bei der nächsten Frage die Farben der Balken 
     document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
 }
 
-function lastQuestion() { // Umschalten der Header nach der letzten Frage
+function showEndScreen() { // Umschalten der Header nach der letzten Frage
     document.getElementById('card-body').classList.add('d-none');
-    document.getElementById('card-body-end').classList.remove('d-none');    
+    document.getElementById('card-body-end').classList.remove('d-none');
+    endDetails();
 }
 
 function endDetails() { // template für die Details auf dem Endscreen
     document.getElementById('amount-questions').innerHTML = questions.length;
     document.getElementById('amount-right-questions').innerHTML = rightquestions;
-    document.getElementById('card-header-img').src = './img/trophy.png';  
+    document.getElementById('card-header-img').src = './img/trophy.png';
+
 }
 
 function restartQuiz() {    // Zum Neustarten des Quiz, werden einfach die Elemente wieder zurückgesetzt und die bestenden Variablen nochmal auf 0 gesetzt.
-    document.getElementById('card-header-img').src = './img/card-bg.jpg'; 
+    document.getElementById('card-header-img').src = './img/card-bg.jpg';
     document.getElementById('card-body-end').classList.add('d-none');
     document.getElementById('card-body').classList.remove('d-none');
     rightquestions = 0;
@@ -82,6 +80,9 @@ function restartQuiz() {    // Zum Neustarten des Quiz, werden einfach die Eleme
     init();
 }
 
-function checkForTwoChoices() {
-
+function progressBarInPercent() {
+    let percent = (currentquestion + 1) / questions.length;
+    percent = Math.round(percent * 100);
+    document.getElementById('progress-bar').innerHTML = `${percent}%`;
+    document.getElementById('progress-bar').style = `width: ${percent}%`;
 }
