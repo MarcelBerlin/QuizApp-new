@@ -59,8 +59,73 @@ let questions = [
     'answer_4': 'Neil Bloomkamp',
     'right_answer': 3,
 
-}
+},
+{
+    'category': 'Musik',
+    'question': 'Welche Metal Band hat eine deutsche Herkunft?',
+    'answer_1': 'Scorpions',
+    'answer_2': 'Iron Maiden',
+    'answer_3': 'Metallica',
+    'answer_4': 'Megadeth',
+    'right_answer': 1,
+
+},
+{
+    'category': 'Musik',
+    'question': 'Welche Taktart wird beim klassischen Walzer verwendet?',
+    'answer_1': '2/4 Takt',
+    'answer_2': '4/4 Takt',
+    'answer_3': '6/4 Takt',
+    'answer_4': '3/4 Takt',
+    'right_answer': 4,
+
+},
+{
+    'category': 'Musik',
+    'question': 'Was ist ein Quintenzirkel?',
+    'answer_1': 'Eine Notenart',
+    'answer_2': 'Skala von aufeinander abgestimmten Tönen',
+    'answer_3': 'Zubehör für ein Blasinstrument',
+    'answer_4': 'Bezeichnung für eine Wiederholung',
+    'right_answer': 2,
+
+},
+{
+    'category': 'Musik',
+    'question': 'Welche deutsche Punkrock Band stammt aus Düsseldorf?',
+    'answer_1': 'Die Ärzte',
+    'answer_2': 'Die Toten Hosen',
+    'answer_3': 'Kraftklub',
+    'answer_4': 'Beatsteaks',
+    'right_answer': 2,
+
+},
+{
+    'category': 'Musik',
+    'question': 'Wie wird in der elektronischen Musik eine Melodie erzeugt?',
+    'answer_1': 'Vocoder',
+    'answer_2': 'Saturator',
+    'answer_3': 'Synthesizer',
+    'answer_4': 'Compressor',
+    'right_answer': 3,
+
+},
+{
+    'category': 'Musik',
+    'question': 'In welcher Musikrichtung werden häufig "Claps" eingesetzt?',
+    'answer_1': 'Elektronisch',
+    'answer_2': 'Klassisch',
+    'answer_3': 'Pop',
+    'answer_4': 'Rock',
+    'right_answer': 1,
+
+},
 ];
+
+let movie = questions.filter(questions => questions.category === 'Movies');
+let music = questions.filter(questions => questions.category === 'Musik');
+console.log(music);
+console.log(movie);
 
 let rightquestions = 0;
 let currentquestion = 0;

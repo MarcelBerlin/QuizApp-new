@@ -4,7 +4,7 @@ function init() {
 }
 
 function showQuestion() {
-    if (currentquestion >= questions.length) {
+    if (gameIsOver(currentquestion, questions)) {
         showEndScreen();
         audio_win.play();
     } else {
@@ -28,6 +28,10 @@ function answer(selection) { // Die Variable "selection" wurde bereits im HTML C
         audio_error.play();
     }
     document.getElementById('next-button').disabled = false; // Der "Nächste Frage" Button wird bis zu einer Auswahl deaktiviert.
+}
+
+function gameIsOver(currentquestion, questions) {
+    return currentquestion >= questions.length;
 }
 
 function nextQuestion() {
