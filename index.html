@@ -9,25 +9,47 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
   <script src="database.js"></script>
-  <title>QuizApp</title>
+  <title>QuizApp - Menu</title>
 </head>
 
-<body onload="init()">
+<body onload="initMenu()">
   <div class="main">
     <nav class="navbar">
 
       <div class="choose-quiz">
-        <h2 class="nav-headline"><img src="./img/logo.png"></h2>
+        <h2 class="nav-headline"><img src="./img/logo.png" onclick="initMenu()"></h2>
         <div class="nav-categories">
-          <u><h3 class="categories-headline">Kategorien:</h3></u>
-          <span class="categories">Movies</span>
-          <span class="categories">Music</span>
+          <u>
+            <h3 class="categories-headline">Kategorien:</h3>
+          </u>
+          <span class="categories" onclick="initMovies()">Movies</span>
+          <span class="categories" onclick="initMusic()">Music</span>
         </div>
       </div>
     </nav>
 
+    <div id="start-container" class="main-container">
+      <div class="card quiz-card" style="width: 18rem;">
+        <img src="./img/card-bg.jpg" id="card-header-img" class="card-img-top">
+        
+        <div id="card-body" class="card-body">
+          <h5 class="card-title" id="questiontext">Bitte eine Kategorie auswählen</h5>
+          <div class="card quiz-answer-card mb-2">
 
-    <div class="main-container">
+            <!-- Durch den Eintrag in die Klammer der funktion, hinterlegen wir den Wert der einzelnen Frage. -->
+            <b><div class="card-body" id="answer_1" style="text-align: center; font-size: 24px;" onclick="initMovies()">
+              Filme
+            </div></b>
+          </div>
+
+          <div class="card quiz-answer-card mb-2">
+            <b><div class="card-body" id="answer_2" style="text-align: center; font-size: 24px;" onclick="initMusic()">
+              Musik
+            </div></b>
+          </div>
+
+
+    <div id="main-container" class="main-container">
       <div class="card quiz-card" style="width: 18rem;">
         <img src="./img/card-bg.jpg" id="card-header-img" class="card-img-top">
         <div class="progress">
@@ -86,6 +108,7 @@
           </div>
           <div class="restart-button"><button onclick="restartQuiz()" class="btn btn-primary" id="restart-quiz">Noch
               einmal spielen</button></div>
+              <div class="restart-button"><button onclick="selectCategory()" class="btn btn-primary" id="home-button">Andere Kategorie</button></div>
         </div>
       </div>
     </div>

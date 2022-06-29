@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="database.js"></script>
+    <title>QuizApp - Musik</title>
+</head>
+<body onload="initMusic()">
+    <div class="main">
+        <nav class="navbar">
+
+            <div class="choose-quiz">
+                <h2 class="nav-headline"><img src="./img/logo.png" onclick="initMenu()"></h2>
+                <div class="nav-categories">
+                    <u>
+                        <h3 class="categories-headline">Kategorien:</h3>
+                    </u>
+                    <a href="movie.html"><span class="categories">Movies</span></a>
+                    <a href="music.html"><span class="categories">Music</span></a>
+                </div>
+            </div>
+        </nav>
+        <div id="main-container" class="main-container">
+            <div class="card quiz-card" style="width: 18rem;">
+                <img src="./img/card-bg.jpg" id="card-header-img" class="card-img-top">
+                <div class="progress">
+                    <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 0%;">0%</div>
+                </div>
+                <div id="card-body" class="card-body">
+                    <h5 class="card-title" id="questiontext">Frage</h5>
+                    <div>
+                        <div class="card quiz-answer-card mb-2">
+
+                            <!-- Durch den Eintrag in die Klammer der funktion, hinterlegen wir den Wert der einzelnen Frage. -->
+                            <div class="card-body" id="answer_1" onclick="answer('answer_1')">
+                                Antwort-1
+                            </div>
+                        </div>
+
+                        <div class="card quiz-answer-card mb-2">
+                            <div class="card-body" id="answer_2" onclick="answer('answer_2')">
+                                Antwort-2
+                            </div>
+                        </div>
+
+
+                        <div class="card quiz-answer-card mb-2">
+                            <div class="card-body" id="answer_3" onclick="answer('answer_3')">
+                                Antwort-3
+                            </div>
+                        </div>
+
+                        <div class="card quiz-answer-card mb-2">
+                            <div class="card-body" id="answer_4" onclick="answer('answer_4')">
+                                Antwort-4
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="question-footer">
+                        <div class="next-question">
+                            <span>Frage <b id="actualquestion"></b> von <b id="allquestions"></b></span>
+                            <button onclick="nextQuestion()" class="btn btn-primary" id="next-button" disabled>Nächste
+                                Frage</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="card-body-end" class="card-body-end d-none">
+                    <div>
+                        <h1>Quiz beendet</h1>
+                    </div>
+                    <div>
+                        <h3>Danke für's mitspielen!</h3>
+                    </div>
+
+                    <div>
+                        <span>Du hast <b id="amount-right-questions">xxx</b> von <b id="amount-questions">xxx</b> Fragen
+                            richtig
+                            beantwortet.</span>
+                    </div>
+                    <div class="restart-button"><button onclick="restartQuiz()" class="btn btn-primary"
+                            id="restart-quiz">Noch
+                            einmal spielen</button></div>
+                    <div class="restart-button"><button onclick="selectCategory()" class="btn btn-primary"
+                            id="home-button">Andere Kategorie</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

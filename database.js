@@ -122,10 +122,7 @@ let questions = [
 },
 ];
 
-let movie = questions.filter(questions => questions.category === 'Movies');
-let music = questions.filter(questions => questions.category === 'Musik');
-console.log(music);
-console.log(movie);
+let filterCategory = [];
 
 let rightquestions = 0;
 let currentquestion = 0;
