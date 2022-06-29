@@ -122,10 +122,3 @@ let questions = [
 },
 ];
 
-let filterCategory = [];
-
-let rightquestions = 0;
-let currentquestion = 0;
-let audio_success = new Audio('./sounds/success-bell.wav');
-let audio_error = new Audio('./sounds/error-sound.wav');
-let audio_win = new Audio('./sounds/8-bit-win-sound-effect.wav');

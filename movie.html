@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
     <script src="script.js"></script>
     <script src="database.js"></script>
     <title>QuizApp - Filme</title>
@@ -17,7 +18,9 @@
         <nav class="navbar">
 
             <div class="choose-quiz">
-                <h2 class="nav-headline"><img src="./img/logo.png" onclick="initMenu()"></h2>
+                <a href="index.html">
+                    <h2 class="nav-headline"><img src="./img/logo.png"></h2>
+                </a>
                 <div class="nav-categories">
                     <u>
                         <h3 class="categories-headline">Kategorien:</h3>
@@ -89,8 +92,8 @@
                     <div class="restart-button"><button onclick="restartQuiz()" class="btn btn-primary"
                             id="restart-quiz">Noch
                             einmal spielen</button></div>
-                    <div class="restart-button"><button onclick="selectCategory()" class="btn btn-primary"
-                            id="home-button">Andere Kategorie</button></div>
+                    <div class="restart-button"><a href="index.html"><button class="btn btn-primary"
+                                id="home-button">Andere Kategorie</button></a></div>
                 </div>
             </div>
         </div>

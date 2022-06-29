@@ -1,11 +1,13 @@
-function initMenu() {
-    document.getElementById('main-container').classList.add('d-none');
-    
-}
+let filterCategory = [];
+let rightquestions = 0;
+let currentquestion = 0;
+
+let audio_success = new Audio('./sounds/success-bell.wav');
+let audio_error = new Audio('./sounds/error-sound.wav');
+let audio_win = new Audio('./sounds/win.wav');
+
 
 function initMovies() {
-    document.getElementById('start-container').classList.add('d-none');
-    document.getElementById('main-container').classList.remove('d-none');
     let movie = questions.filter(questions => questions.category === 'Movies');
     filterCategory.push(movie);
     document.getElementById('allquestions').innerHTML = filterCategory[0].length;
@@ -13,8 +15,6 @@ function initMovies() {
 }
 
 function initMusic() {
-    document.getElementById('start-container').classList.add('d-none');
-    document.getElementById('main-container').classList.remove('d-none');
     let music = questions.filter(questions => questions.category === 'Musik');
     filterCategory.push(music);
     document.getElementById('allquestions').innerHTML = filterCategory[0].length;
@@ -22,7 +22,7 @@ function initMusic() {
 }
 
 function showQuestion() {
-    if (currentquestion >= filterCategory[0].length) {
+    if (gameIsOver()) {
         showEndScreen();
         audio_win.play();
     } else {
@@ -36,14 +36,10 @@ function answer(selection) { // Die Variable "selection" wurde bereits im HTML C
     selquestionnumber = selection.slice(-1);  // Mit der funktion .slice(-1) können wir uns auf die letzte Stelle des Strings fokussieren und ignorieren alles, was davor steht. Bsp: answer_1 - alles bis auf die Zahl 1 wird einfach ignoriert.
     let idOfRightAnswer = `answer_${question['right_answer']}`; // um der Variable nun die Zahl der korrekten Antwort zuzuweisen, vergeben wir unter Anführung der diagonalen Anführungszeichen `` den Wert answer_${question['right_answer']} - Da wir in unserem JSON Array ja jeweils immer eine Nummer für die richtige Antwort hinterlegt haben.
 
-    if (selquestionnumber == question['right_answer']) { // Hier stellen wir dann die gewählte Antwort mit der "richtigen Antwort" ins Verhältnis. Ist der Wert identisch - liegen wir RICHTIG!
-        document.getElementById(selection).parentNode.classList.add('bg-success'); // Wenn die Auswahl richtig ist, wird die "übergeordnete CSS Klasse" (parentNode) durch "bg-success" mit der Farbe GRÜN hinterlegt
-        rightquestions++; // Bei einer richtigen Antwort, wird die Anzahl der korrekten Antworten um 1 addiert - durch das ++
-        audio_success.play();
+    if (chooseRightAnswer(question)) {
+        greenIndicator(selection);
     } else {
-        document.getElementById(selection).parentNode.classList.add('bg-danger'); // Wenn die Auswahl falsch war, erscheint die übergeordnete Klasse in der Farbe ROT.
-        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success'); // Gleichzeitig wird damit die richtige Antwort als GRÜN hervorgehoben.  
-        audio_error.play();
+        redIndicator(selection, idOfRightAnswer);
     }
     document.getElementById('next-button').disabled = false; // Der "Nächste Frage" Button wird bis zu einer Auswahl deaktiviert.
 }
@@ -77,6 +73,29 @@ function resetAnswer() { // Damit bei der nächsten Frage die Farben der Balken 
     document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
 }
 
+function chooseRightAnswer(question) { // Hier stellen wir dann die gewählte Antwort mit der "richtigen Antwort" ins Verhältnis. Ist der Wert identisch - liegen wir RICHTIG!
+    let rightAnswer = selquestionnumber == question['right_answer'];
+    return rightAnswer;
+}
+
+function greenIndicator(selection) {
+    document.getElementById(selection).parentNode.classList.add('bg-success'); // Wenn die Auswahl richtig ist, wird die "übergeordnete CSS Klasse" (parentNode) durch "bg-success" mit der Farbe GRÜN hinterlegt
+    rightquestions++; // Bei einer richtigen Antwort, wird die Anzahl der korrekten Antworten um 1 addiert - durch das ++
+    audio_success.play();
+}
+
+function redIndicator(selection, idOfRightAnswer) {
+    document.getElementById(selection).parentNode.classList.add('bg-danger'); // Wenn die Auswahl falsch war, erscheint die übergeordnete Klasse in der Farbe ROT.
+    document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success'); // Gleichzeitig wird damit die richtige Antwort als GRÜN hervorgehoben.  
+    audio_error.play();
+}
+
+
+function gameIsOver() { // Sobald die letzte Frage im Array erreicht ist
+    let endOfQuestion = currentquestion >= filterCategory[0].length;
+    return endOfQuestion;
+}
+
 function showEndScreen() { // Umschalten der Header nach der letzten Frage
     document.getElementById('card-body').classList.add('d-none');
     document.getElementById('card-body-end').classList.remove('d-none');
@@ -96,13 +115,7 @@ function restartQuiz() {    // Zum Neustarten des Quiz, werden einfach die Eleme
     document.getElementById('card-body').classList.remove('d-none');
     rightquestions = 0;
     currentquestion = 0;
-    initMenu();
-}
-
-function selectCategory() {
-
-
-
+    showQuestion();
 }
 
 function progressBarInPercent() {
