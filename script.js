@@ -7,6 +7,14 @@ let audio_error = new Audio('./sounds/error-sound.wav');
 let audio_win = new Audio('./sounds/win.wav');
 
 
+function initHardware() {
+    let hardware = questions.filter(questions => questions.category === 'Hardware');
+    filterCategory.push(hardware);
+    document.getElementById('allquestions').innerHTML = filterCategory[0].length;
+    showQuestion();
+}
+
+
 function initMovies() {
     let movie = questions.filter(questions => questions.category === 'Movies');
     filterCategory.push(movie);
@@ -23,6 +31,7 @@ function initMusic() {
 
 function showQuestion() {
     if (gameIsOver()) {
+        progressBarInPercent();
         showEndScreen();
         audio_win.play();
     } else {
@@ -119,7 +128,7 @@ function restartQuiz() {    // Zum Neustarten des Quiz, werden einfach die Eleme
 }
 
 function progressBarInPercent() {
-    let percent = (currentquestion + 1) / filterCategory[0].length;
+    let percent = currentquestion / filterCategory[0].length;
     percent = Math.round(percent * 100);
     document.getElementById('progress-bar').innerHTML = `${percent}%`;
     document.getElementById('progress-bar').style = `width: ${percent}%`;

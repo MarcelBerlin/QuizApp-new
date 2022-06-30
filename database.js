@@ -120,5 +120,55 @@ let questions = [
     'right_answer': 1,
 
 },
+{
+    'category': 'Hardware',
+    'question': 'Wofür steht die Abkürzung "RAM"?',
+    'answer_1': 'Rocket Access Memory',
+    'answer_2': 'Relative Access Memory',
+    'answer_3': 'Random Access Memory',
+    'answer_4': 'Reliant Access Memory',
+    'right_answer': 3,
+
+},
+{
+    'category': 'Hardware',
+    'question': 'Wieviel Arbeitsspeicher (RAM) wird zum Betrieb von Windows 10 benötigt?',
+    'answer_1': '2gb',
+    'answer_2': '4gb',
+    'answer_3': '1gb',
+    'answer_4': '3gb',
+    'right_answer': 1,
+
+},
+{
+    'category': 'Hardware',
+    'question': 'Ergänze RICHTIG: Byte, KiloByte, MegaByte, ...',
+    'answer_1': 'Petabyte',
+    'answer_2': 'Terabyte',
+    'answer_3': 'Gigabyte',
+    'answer_4': 'Exabyte',
+    'right_answer': 3,
+
+},
+{
+    'category': 'Hardware',
+    'question': 'Welche Hardware Komponente ist am wichtigsten für die Bildbearbeitung?',
+    'answer_1': 'RAM',
+    'answer_2': 'CPU',
+    'answer_3': 'Mainboard',
+    'answer_4': 'GPU',
+    'right_answer': 2,
+
+},
+{
+    'category': 'Hardware',
+    'question': 'Welche Hz-Frequenz gilt als "Standard" bei Gaming Monitoren?',
+    'answer_1': '30 Hz',
+    'answer_2': '60 Hz',
+    'answer_3': '120 Hz',
+    'answer_4': '140 Hz',
+    'right_answer': 4,
+
+},
 ];
 
