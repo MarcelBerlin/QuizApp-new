@@ -10,12 +10,6 @@ let audio_win = new Audio('./sounds/win.wav');
 // Option #1 #############
 
 
-function initHome() {
-    document.getElementById('main-container').classList.add('d-none');
-    document.getElementById('main-container-start').classList.remove('d-none');
-    showQuestion();
-}
-
 function initMovies() {
     document.getElementById('main-container-start').classList.add('d-none');
     document.getElementById('main-container').classList.remove('d-none');
