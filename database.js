@@ -1,7 +1,7 @@
 let questions = [
 
 {
-    'category': 'Movies',
+    'category': 'Filme',
     'question': 'Welcher Film trägt den Titel "Erfolgreichster Film aller Zeiten"?',
     'answer_1': 'Die Verurteilten',
     'answer_2': 'Avengers: Endgame',
@@ -11,7 +11,7 @@ let questions = [
 
 },
 {
-    'category': 'Movies',
+    'category': 'Filme',
     'question': 'Wie wird Jeff Bridges Charakter im Film "The Big Lebowski" von seinen Freunden genannt?',
     'answer_1': 'Donny',
     'answer_2': 'Walter',
@@ -22,7 +22,7 @@ let questions = [
 },
 {
     
-    'category': 'Movies',
+    'category': 'Filme',
     'question': 'In welches Jahr Reisen Marty und DocBrown in Zurück in die Zukunft - Teil 1?',
     'answer_1': '1955',
     'answer_2': '1957',
@@ -32,7 +32,7 @@ let questions = [
 
 },
 {
-    'category': 'Movies',
+    'category': 'Filme',
     'question': 'Für welchen Film erhielt Leonardo DiCaprio, seinen ersten Oscar als bester Hauptdarsteller?',
     'answer_1': 'Once upon a Time in Hollywood',
     'answer_2': 'The Wolf of Wallstreet',
@@ -41,7 +41,7 @@ let questions = [
     'right_answer': 4,
 },
 {
-    'category': 'Movies',
+    'category': 'Filme',
     'question': 'Wie heißt das Mädchen mit telekinetischen Fähigkeiten aus Stranger Things?',
     'answer_1': 'Joyce',
     'answer_2': 'Elvi',
@@ -51,7 +51,7 @@ let questions = [
 
 },
 {
-    'category': 'Movies',
+    'category': 'Filme',
     'question': 'Welcher Regisseur war verantwortlich für die Sci-Fi Filme Arrival, Blade Runner 2049 & Dune?',
     'answer_1': 'Ridley Scott',
     'answer_2': 'James Cameron',
@@ -166,7 +166,7 @@ let questions = [
     'answer_1': '30 Hz',
     'answer_2': '60 Hz',
     'answer_3': '120 Hz',
-    'answer_4': '140 Hz',
+    'answer_4': '144 Hz',
     'right_answer': 4,
 
 },

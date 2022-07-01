@@ -7,27 +7,56 @@ let audio_error = new Audio('./sounds/error-sound.wav');
 let audio_win = new Audio('./sounds/win.wav');
 
 
-function initHardware() {
-    let hardware = questions.filter(questions => questions.category === 'Hardware');
-    filterCategory.push(hardware);
-    document.getElementById('allquestions').innerHTML = filterCategory[0].length;
+// Option #1 #############
+
+
+function initHome() {
+    document.getElementById('main-container').classList.add('d-none');
+    document.getElementById('main-container-start').classList.remove('d-none');
     showQuestion();
 }
 
-
 function initMovies() {
-    let movie = questions.filter(questions => questions.category === 'Movies');
-    filterCategory.push(movie);
+    document.getElementById('main-container-start').classList.add('d-none');
+    document.getElementById('main-container').classList.remove('d-none');
+    let movie = questions.filter(questions => questions.category === 'Filme');
+    filterCategory.push(movie);    
     document.getElementById('allquestions').innerHTML = filterCategory[0].length;
     showQuestion();
 }
 
 function initMusic() {
+    document.getElementById('main-container-start').classList.add('d-none');
+    document.getElementById('main-container').classList.remove('d-none');
     let music = questions.filter(questions => questions.category === 'Musik');
-    filterCategory.push(music);
+    filterCategory.push(music);    
     document.getElementById('allquestions').innerHTML = filterCategory[0].length;
     showQuestion();
 }
+
+function initHardware() {
+    document.getElementById('main-container-start').classList.add('d-none');
+    document.getElementById('main-container').classList.remove('d-none');
+    let hardware = questions.filter(questions => questions.category === 'Hardware');
+    filterCategory.push(hardware);    
+    document.getElementById('allquestions').innerHTML = filterCategory[0].length;
+    showQuestion();
+}
+
+
+// Option #2 ###############
+
+function initQuestion(category) {
+    let category = questions.filter(questions => questions.category === 'Filme');
+    filterCategory.push(category);
+    document.getElementById('allquestions').innerHTML = filterCategory[0].length;
+    showQuestion();
+}
+
+
+
+
+
 
 function showQuestion() {
     if (gameIsOver()) {
@@ -47,8 +76,16 @@ function answer(selection) { // Die Variable "selection" wurde bereits im HTML C
 
     if (chooseRightAnswer(question)) {
         greenIndicator(selection);
+        document.getElementById('button-1').disabled = true;
+        document.getElementById('button-2').disabled = true;
+        document.getElementById('button-3').disabled = true;
+        document.getElementById('button-4').disabled = true;
     } else {
         redIndicator(selection, idOfRightAnswer);
+        document.getElementById('button-1').disabled = true;
+        document.getElementById('button-2').disabled = true;
+        document.getElementById('button-3').disabled = true;
+        document.getElementById('button-4').disabled = true;
     }
     document.getElementById('next-button').disabled = false; // Der "Nächste Frage" Button wird bis zu einer Auswahl deaktiviert.
 }
