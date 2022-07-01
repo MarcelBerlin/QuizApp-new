@@ -9,12 +9,17 @@ let audio_win = new Audio('./sounds/win.wav');
 
 // Option #1 #############
 
+function init() {
+    document.getElementById('main-container').classList.add('d-none');
+    document.getElementById('main-container-start').classList.remove('d-none');
+    location.reload();
+}
 
 function initMovies() {
     document.getElementById('main-container-start').classList.add('d-none');
     document.getElementById('main-container').classList.remove('d-none');
     let movie = questions.filter(questions => questions.category === 'Filme');
-    filterCategory.push(movie);    
+    filterCategory.push(movie);
     document.getElementById('allquestions').innerHTML = filterCategory[0].length;
     showQuestion();
 }
@@ -23,7 +28,7 @@ function initMusic() {
     document.getElementById('main-container-start').classList.add('d-none');
     document.getElementById('main-container').classList.remove('d-none');
     let music = questions.filter(questions => questions.category === 'Musik');
-    filterCategory.push(music);    
+    filterCategory.push(music);
     document.getElementById('allquestions').innerHTML = filterCategory[0].length;
     showQuestion();
 }
@@ -32,7 +37,7 @@ function initHardware() {
     document.getElementById('main-container-start').classList.add('d-none');
     document.getElementById('main-container').classList.remove('d-none');
     let hardware = questions.filter(questions => questions.category === 'Hardware');
-    filterCategory.push(hardware);    
+    filterCategory.push(hardware);
     document.getElementById('allquestions').innerHTML = filterCategory[0].length;
     showQuestion();
 }
@@ -41,13 +46,13 @@ function initHardware() {
 // Option #2 ###############
 
 function initQuestion(category) {
-    let category = questions.filter(questions => questions.category === 'Filme');
-    filterCategory.push(category);
+    let questioncategory = questions.filter(questions => questions.category === 'Filme');
+    filterCategory.push(questioncategory);
     document.getElementById('allquestions').innerHTML = filterCategory[0].length;
     showQuestion();
 }
 
-
+//##########################
 
 
 
@@ -100,6 +105,10 @@ function furtherQuestions() {
     document.getElementById('answer_2').innerHTML = question['answer_2'];
     document.getElementById('answer_3').innerHTML = question['answer_3'];
     document.getElementById('answer_4').innerHTML = question['answer_4'];
+    document.getElementById('button-1').disabled = false;
+    document.getElementById('button-2').disabled = false;
+    document.getElementById('button-3').disabled = false;
+    document.getElementById('button-4').disabled = false;
 }
 
 function resetAnswer() { // Damit bei der nächsten Frage die Farben der Balken resettet werden
