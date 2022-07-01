@@ -18,42 +18,42 @@
     <nav class="navbar">
 
       <div class="choose-quiz">
-        <h2 class="nav-headline"><img src="./img/logo.png" onclick="init()"></h2>
+        <h2 class="nav-headline"><img src="./img/logo.png" onclick="reset()"></h2>
         <div class="nav-categories">
           <u>
             <h3 class="categories-headline">Kategorien:</h3>
           </u>
-          <span class="categories" onclick="initMovies()">Filme</span>
-          <span class="categories" onclick="initMusic()">Musik</span>
-          <span class="categories" onclick="initHardware()">Hardware</span>
+          <span class="categories" onclick="initQuestion('Filme')">Filme</span>
+          <span class="categories" onclick="initQuestion('Musik')">Musik</span>
+          <span class="categories" onclick="initQuestion('Hardware')">Hardware</span>
         </div>
     </nav>
 
     <div id="main-container-start" class="main-container">
       <div class="card quiz-card" style="width: 18rem;">
-        <img src="./img/card-bg.jpg" id="card-header-img" class="card-img-top">
+        <img src="./img/card-bg.jpg" class="card-img-top">
 
-        <div id="card-body" class="card-body">
+        <div id="card-body-start" class="card-body">
           <h5 class="card-title">Bitte eine Kategorie auswählen</h5>
           <div class="card quiz-answer-card-index mb-2">
 
             <!-- Durch den Eintrag in die Klammer der funktion, hinterlegen wir den Wert der einzelnen Frage. -->
             <b>
-              <div class="card-body" style="text-align: center; font-size: 20px;" onclick="initMovies()">
+              <div class="card-body" style="text-align: center; font-size: 20px;" onclick="initQuestion('Filme')">
                 Filme
               </div></a>
             </b>
           </div>
           <div class="card quiz-answer-card-index mb-2">
             <b>
-              <div class="card-body" style="text-align: center; font-size: 20px;" onclick="initMusic()">
+              <div class="card-body" style="text-align: center; font-size: 20px;" onclick="initQuestion('Musik')">
                 Musik
               </div></a>
             </b>
           </div>
           <div class="card quiz-answer-card-index mb-2">
             <b>
-              <div class="card-body" style="text-align: center; font-size: 20px;" onclick="initHardware()">
+              <div class="card-body" style="text-align: center; font-size: 20px;" onclick="initQuestion('Hardware')">
                 Hardware
               </div></a>
             </b>
@@ -74,16 +74,16 @@
             <div class="card quiz-answer-card mb-2">
 
               <!-- Durch den Eintrag in die Klammer der funktion, hinterlegen wir den Wert der einzelnen Frage. -->
-              <button id="button-1">
-                <div class="card-body" id="answer_1" onclick="answer('answer_1')">
+              <button id="button-1" onclick="answer('answer_1')">
+                <div class="card-body" id="answer_1">
                   Antwort-1
                 </div>
               </button>
             </div>
 
             <div class="card quiz-answer-card mb-2">
-              <button id="button-2">
-                <div class="card-body" id="answer_2" onclick="answer('answer_2')">
+              <button id="button-2" onclick="answer('answer_2')">
+                <div class="card-body" id="answer_2">
                   Antwort-2
                 </div>
               </button>
@@ -91,16 +91,16 @@
 
 
             <div class="card quiz-answer-card mb-2">
-              <button id="button-3">
-                <div class="card-body" id="answer_3" onclick="answer('answer_3')">
+              <button id="button-3" onclick="answer('answer_3')">
+                <div class="card-body" id="answer_3">
                   Antwort-3
                 </div>
               </button>
             </div>
 
             <div class="card quiz-answer-card mb-2">
-              <button id="button-4">
-                <div class="card-body" id="answer_4" onclick="answer('answer_4')">
+              <button id="button-4" onclick="answer('answer_4')">
+                <div class="card-body" id="answer_4">
                   Antwort-4
                 </div>
               </button>
@@ -116,6 +116,7 @@
             </div>
           </div>
         </div>
+        
         <div id="card-body-end" class="card-body-end d-none">
           <div>
             <h1>Quiz beendet</h1>

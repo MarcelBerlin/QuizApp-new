@@ -12,55 +12,31 @@ let audio_win = new Audio('./sounds/win.wav');
 function init() {
     document.getElementById('main-container').classList.add('d-none');
     document.getElementById('main-container-start').classList.remove('d-none');
-    location.reload();
+
 }
 
-function initMovies() {
-    document.getElementById('main-container-start').classList.add('d-none');
-    document.getElementById('main-container').classList.remove('d-none');
-    let movie = questions.filter(questions => questions.category === 'Filme');
-    filterCategory.push(movie);
+function reset() {
+    filterCategory = [];
+    rightquestions = 0;
+    currentquestion = 0;
+    resetAnswer();
+    init();
+}
+
+
+function initQuestion(questionCategory) {
+    showHideContainer();
+    let category = questions.filter(questions => questions.category === questionCategory);
+    filterCategory.push(category);
     document.getElementById('allquestions').innerHTML = filterCategory[0].length;
     showQuestion();
 }
-
-function initMusic() {
-    document.getElementById('main-container-start').classList.add('d-none');
-    document.getElementById('main-container').classList.remove('d-none');
-    let music = questions.filter(questions => questions.category === 'Musik');
-    filterCategory.push(music);
-    document.getElementById('allquestions').innerHTML = filterCategory[0].length;
-    showQuestion();
-}
-
-function initHardware() {
-    document.getElementById('main-container-start').classList.add('d-none');
-    document.getElementById('main-container').classList.remove('d-none');
-    let hardware = questions.filter(questions => questions.category === 'Hardware');
-    filterCategory.push(hardware);
-    document.getElementById('allquestions').innerHTML = filterCategory[0].length;
-    showQuestion();
-}
-
-
-// Option #2 ###############
-
-function initQuestion(category) {
-    let questioncategory = questions.filter(questions => questions.category === 'Filme');
-    filterCategory.push(questioncategory);
-    document.getElementById('allquestions').innerHTML = filterCategory[0].length;
-    showQuestion();
-}
-
-//##########################
-
-
 
 
 function showQuestion() {
     if (gameIsOver()) {
         progressBarInPercent();
-        showEndScreen();
+        showEndScreen();        
         audio_win.play();
     } else {
         progressBarInPercent();
@@ -89,6 +65,10 @@ function answer(selection) { // Die Variable "selection" wurde bereits im HTML C
     document.getElementById('next-button').disabled = false; // Der "Nächste Frage" Button wird bis zu einer Auswahl deaktiviert.
 }
 
+function showHideContainer() {
+    document.getElementById('main-container-start').classList.add('d-none');
+    document.getElementById('main-container').classList.remove('d-none');
+}
 
 function nextQuestion() {
     currentquestion++; // mit dem Zusatz "++" wird die Variable currentquestion, welche in der Database bereits auf "0" definiert wurde, immer um den Faktor 1 erhöht. Somit wird im JSON Array nun die Stelle 1 aufgerufen - danach Stelle 2 usw.
