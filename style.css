@@ -43,6 +43,10 @@ body {
     min-height: 80vh;
 }
 
+.responsive-nav-container {
+    display: none;
+}
+
 .nav-headline {
     margin-bottom: 100px;
 }
@@ -93,6 +97,15 @@ body {
     border-radius: 0%;
 }
 
+.answer-button {
+    border: 0.1px solid lightgrey;
+    background-color: white;
+}
+
+.answer-button:hover {
+    background-color: rgba(0,0,0,0.1);
+
+}
 
 .question-footer {
     border-top: 1px solid rgba(0,0,0,0.4);

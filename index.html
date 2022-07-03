@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media.css">
   <link rel="stylesheet" href="fonts.css">
   <script src="script.js"></script>
   <script src="database.js"></script>
@@ -14,9 +15,13 @@
 </head>
 
 <body>
-  <div class="main">
-    <nav class="navbar">
 
+
+
+
+  <div class="main">
+
+    <nav class="navbar">
       <div class="choose-quiz">
         <h2 class="nav-headline"><img src="./img/logo.png" onclick="reset()"></h2>
         <div class="nav-categories">
@@ -28,6 +33,14 @@
           <span class="categories" onclick="initQuestion('Hardware')">Hardware</span>
         </div>
     </nav>
+
+    <div class="responsive-nav-container">
+      <nav class="responsive-nav">
+        <img src="./img/menu.png" onclick="openResponsive()">
+        <img src="./img/logo.png" onclick="reset()"> 
+      </nav>  
+    </div>
+ 
 
     <div id="main-container-start" class="main-container">
       <div class="card quiz-card" style="width: 18rem;">
@@ -74,7 +87,7 @@
             <div class="card quiz-answer-card mb-2">
 
               <!-- Durch den Eintrag in die Klammer der funktion, hinterlegen wir den Wert der einzelnen Frage. -->
-              <button id="button-1" onclick="answer('answer_1')">
+              <button id="button-1" class="answer-button" onclick="answer('answer_1')">
                 <div class="card-body" id="answer_1">
                   Antwort-1
                 </div>
@@ -82,7 +95,7 @@
             </div>
 
             <div class="card quiz-answer-card mb-2">
-              <button id="button-2" onclick="answer('answer_2')">
+              <button id="button-2" class="answer-button" onclick="answer('answer_2')">
                 <div class="card-body" id="answer_2">
                   Antwort-2
                 </div>
@@ -91,7 +104,7 @@
 
 
             <div class="card quiz-answer-card mb-2">
-              <button id="button-3" onclick="answer('answer_3')">
+              <button id="button-3" class="answer-button" onclick="answer('answer_3')">
                 <div class="card-body" id="answer_3">
                   Antwort-3
                 </div>
@@ -99,7 +112,7 @@
             </div>
 
             <div class="card quiz-answer-card mb-2">
-              <button id="button-4" onclick="answer('answer_4')">
+              <button id="button-4" class="answer-button" onclick="answer('answer_4')">
                 <div class="card-body" id="answer_4">
                   Antwort-4
                 </div>

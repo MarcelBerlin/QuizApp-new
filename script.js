@@ -51,16 +51,10 @@ function answer(selection) { // Die Variable "selection" wurde bereits im HTML C
 
     if (chooseRightAnswer(question)) {
         greenIndicator(selection);
-        document.getElementById('button-1').disabled = true;
-        document.getElementById('button-2').disabled = true;
-        document.getElementById('button-3').disabled = true;
-        document.getElementById('button-4').disabled = true;
+        disableButton();
     } else {
         redIndicator(selection, idOfRightAnswer);
-        document.getElementById('button-1').disabled = true;
-        document.getElementById('button-2').disabled = true;
-        document.getElementById('button-3').disabled = true;
-        document.getElementById('button-4').disabled = true;
+        disableButton();
     }
     document.getElementById('next-button').disabled = false; // Der "Nächste Frage" Button wird bis zu einer Auswahl deaktiviert.
 }
@@ -152,6 +146,13 @@ function progressBarInPercent() {
     percent = Math.round(percent * 100);
     document.getElementById('progress-bar').innerHTML = `${percent}%`;
     document.getElementById('progress-bar').style = `width: ${percent}%`;
+}
+
+function disableButton() {
+    document.getElementById('button-1').disabled = true;
+    document.getElementById('button-2').disabled = true;
+    document.getElementById('button-3').disabled = true;
+    document.getElementById('button-4').disabled = true;
 }
 
 

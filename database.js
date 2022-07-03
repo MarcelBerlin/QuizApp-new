@@ -44,7 +44,7 @@ let questions = [
     'category': 'Filme',
     'question': 'Wie heißt das Mädchen mit telekinetischen Fähigkeiten aus Stranger Things?',
     'answer_1': 'Joyce',
-    'answer_2': 'Elvi',
+    'answer_2': 'Elfie',
     'answer_3': 'Max',
     'answer_4': 'Nancy',
     'right_answer': 2,
