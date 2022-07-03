@@ -9,17 +9,28 @@
         flex-direction: column;
     }
 
+    .main-container {
+        margin-top: -1px;
+        padding-top: 10%;
+    }
+    
+    .main-container-start {
+        margin-top: -2%;
+    }
+
     .responsive-nav-container {
         width: 100%;
         display: block;
         z-index: 4;
-        background-color: #529EE4;
+        background-color: #444444;
 
     }
 
     .responsive-nav-container img{
         width: auto;
-        height: 75px;
+        height: 100px;
+        margin-top: 2%;
+        
     }
 
     .responsive-nav {
