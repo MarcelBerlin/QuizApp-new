@@ -155,5 +155,3 @@ function disableButton() {
     document.getElementById('button-4').disabled = true;
 }
 
-
-
