@@ -65,8 +65,6 @@ function answer(selection) { // Die Variable "selection" wurde bereits im HTML C
 }
 
 
-    
-
 function showHideContainer() {
     document.getElementById('main-container-start').classList.add('d-none');
     document.getElementById('main-container').classList.remove('d-none');
@@ -87,6 +85,7 @@ function furtherQuestions() {
     document.getElementById('answer_2').innerHTML = question['answer_2'];
     document.getElementById('answer_3').innerHTML = question['answer_3'];
     document.getElementById('answer_4').innerHTML = question['answer_4'];
+    document.getElementById('background-img').src = question['background'];
     document.getElementById('button-1').disabled = false;
     document.getElementById('button-2').disabled = false;
     document.getElementById('button-3').disabled = false;

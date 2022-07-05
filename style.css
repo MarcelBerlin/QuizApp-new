@@ -6,6 +6,16 @@ body {
     display: none;
 }
 
+.background-img {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    object-fit: cover;
+}
+
 .quiz-card {
     width: 35rem !important;
 }
@@ -29,7 +39,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    color: white;    
+    color: white;   
+    z-index: 2; 
 }
 
 .navbar a{
@@ -41,6 +52,7 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 80vh;
+    z-index: 2;
 }
 
 .responsive-nav-container {

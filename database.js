@@ -2,6 +2,7 @@ let questions = [
 
 {
     'category': 'Filme',
+    'background': './img/movie.jpg',
     'question': 'Welcher Film trägt den Titel "Erfolgreichster Film aller Zeiten"?',
     'answer_1': 'Die Verurteilten',
     'answer_2': 'Avengers: Endgame',
@@ -12,6 +13,7 @@ let questions = [
 },
 {
     'category': 'Filme',
+    'background': './img/movie.jpg',
     'question': 'Wie wird Jeff Bridges Charakter im Film "The Big Lebowski" von seinen Freunden genannt?',
     'answer_1': 'Donny',
     'answer_2': 'Walter',
@@ -23,6 +25,7 @@ let questions = [
 {
     
     'category': 'Filme',
+    'background': './img/movie.jpg',
     'question': 'In welches Jahr Reisen Marty und DocBrown in Zurück in die Zukunft - Teil 1?',
     'answer_1': '1955',
     'answer_2': '1957',
@@ -33,6 +36,7 @@ let questions = [
 },
 {
     'category': 'Filme',
+    'background': './img/movie.jpg',
     'question': 'Für welchen Film erhielt Leonardo DiCaprio, seinen ersten Oscar als bester Hauptdarsteller?',
     'answer_1': 'Once upon a Time in Hollywood',
     'answer_2': 'The Wolf of Wallstreet',
@@ -42,6 +46,7 @@ let questions = [
 },
 {
     'category': 'Filme',
+    'background': './img/movie.jpg',
     'question': 'Wie heißt das Mädchen mit telekinetischen Fähigkeiten aus Stranger Things?',
     'answer_1': 'Joyce',
     'answer_2': 'Elfie',
@@ -52,6 +57,7 @@ let questions = [
 },
 {
     'category': 'Filme',
+    'background': './img/movie.jpg',
     'question': 'Welcher Regisseur war verantwortlich für die Sci-Fi Filme Arrival, Blade Runner 2049 & Dune?',
     'answer_1': 'Ridley Scott',
     'answer_2': 'James Cameron',
@@ -62,6 +68,7 @@ let questions = [
 },
 {
     'category': 'Musik',
+    'background': './img/music.jpg',
     'question': 'Welche Metal Band hat eine deutsche Herkunft?',
     'answer_1': 'Scorpions',
     'answer_2': 'Iron Maiden',
@@ -72,6 +79,7 @@ let questions = [
 },
 {
     'category': 'Musik',
+    'background': './img/music.jpg',
     'question': 'Welche Taktart wird beim klassischen Walzer verwendet?',
     'answer_1': '2/4 Takt',
     'answer_2': '4/4 Takt',
@@ -82,6 +90,7 @@ let questions = [
 },
 {
     'category': 'Musik',
+    'background': './img/music.jpg',
     'question': 'Was ist ein Quintenzirkel?',
     'answer_1': 'Eine Notenart',
     'answer_2': 'Skala von aufeinander abgestimmten Tönen',
@@ -92,6 +101,7 @@ let questions = [
 },
 {
     'category': 'Musik',
+    'background': './img/music.jpg',
     'question': 'Welche deutsche Punkrock Band stammt aus Düsseldorf?',
     'answer_1': 'Die Ärzte',
     'answer_2': 'Die Toten Hosen',
@@ -102,6 +112,7 @@ let questions = [
 },
 {
     'category': 'Musik',
+    'background': './img/music.jpg',
     'question': 'Wie wird in der elektronischen Musik eine Melodie erzeugt?',
     'answer_1': 'Vocoder',
     'answer_2': 'Saturator',
@@ -112,6 +123,7 @@ let questions = [
 },
 {
     'category': 'Musik',
+    'background': './img/music.jpg',
     'question': 'In welcher Musikrichtung werden häufig "Claps" eingesetzt?',
     'answer_1': 'Elektronisch',
     'answer_2': 'Klassisch',
@@ -122,6 +134,7 @@ let questions = [
 },
 {
     'category': 'Hardware',
+    'background': './img/hardware.jpg',
     'question': 'Wofür steht die Abkürzung "RAM"?',
     'answer_1': 'Rocket Access Memory',
     'answer_2': 'Relative Access Memory',
@@ -132,6 +145,7 @@ let questions = [
 },
 {
     'category': 'Hardware',
+    'background': './img/hardware.jpg',
     'question': 'Wieviel Arbeitsspeicher (RAM) wird zum Betrieb von Windows 10 benötigt?',
     'answer_1': '2gb',
     'answer_2': '4gb',
@@ -142,6 +156,7 @@ let questions = [
 },
 {
     'category': 'Hardware',
+    'background': './img/hardware.jpg',
     'question': 'Ergänze RICHTIG: Byte, KiloByte, MegaByte, ...',
     'answer_1': 'Petabyte',
     'answer_2': 'Terabyte',
@@ -152,6 +167,7 @@ let questions = [
 },
 {
     'category': 'Hardware',
+    'background': './img/hardware.jpg',
     'question': 'Welche Hardware Komponente ist am wichtigsten für die Bildbearbeitung?',
     'answer_1': 'RAM',
     'answer_2': 'CPU',
@@ -162,6 +178,7 @@ let questions = [
 },
 {
     'category': 'Hardware',
+    'background': './img/hardware.jpg',
     'question': 'Welche Hz-Frequenz gilt als "Standard" bei Gaming Monitoren?',
     'answer_1': '30 Hz',
     'answer_2': '60 Hz',
