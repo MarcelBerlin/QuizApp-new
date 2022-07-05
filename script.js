@@ -23,13 +23,18 @@ function reset() {
     init();
 }
 
+function otherCategory(questionCategory) {
+    reset();
+    initQuestion(questionCategory);
+}
+
 
 function initQuestion(questionCategory) {
     showHideContainer();
     let category = questions.filter(questions => questions.category === questionCategory);
     filterCategory.push(category);
-    document.getElementById('allquestions').innerHTML = filterCategory[0].length;
-    showQuestion();
+    document.getElementById('allquestions').innerHTML = filterCategory[0].length;   
+    showQuestion();  
 }
 
 
@@ -58,6 +63,9 @@ function answer(selection) { // Die Variable "selection" wurde bereits im HTML C
     }
     document.getElementById('next-button').disabled = false; // Der "Nächste Frage" Button wird bis zu einer Auswahl deaktiviert.
 }
+
+
+    
 
 function showHideContainer() {
     document.getElementById('main-container-start').classList.add('d-none');
@@ -154,4 +162,6 @@ function disableButton() {
     document.getElementById('button-3').disabled = true;
     document.getElementById('button-4').disabled = true;
 }
+
+
 

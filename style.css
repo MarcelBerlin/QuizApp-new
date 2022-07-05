@@ -78,6 +78,14 @@ body {
     transition: all 125ms ease-in-out;
 }
 
+.active-category {
+    background-color: #529EE4;
+    color: black;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
 .main-container {
     min-height: 100vh;
     width: 100%;

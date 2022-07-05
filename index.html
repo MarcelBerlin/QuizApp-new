@@ -17,9 +17,6 @@
 
 <body>
 
-
-
-
   <div class="main">
 
     <nav class="navbar">
@@ -29,9 +26,9 @@
           <u>
             <h3 class="categories-headline">Kategorien:</h3>
           </u>
-          <span class="categories" onclick="initQuestion('Filme')">Filme</span>
-          <span class="categories" onclick="initQuestion('Musik')">Musik</span>
-          <span class="categories" onclick="initQuestion('Hardware')">Hardware</span>
+          <span class="categories" id="movie-category" onclick="otherCategory('Filme')">Filme</span>
+          <span class="categories" id="music-category" onclick="otherCategory('Musik')">Musik</span>
+          <span class="categories" id="hardware-category" onclick="otherCategory('Hardware')">Hardware</span>
         </div>
     </nav>
 

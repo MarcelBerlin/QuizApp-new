@@ -4,33 +4,39 @@
         display: none;
     }
 
+    .responsive-nav-container {
+        background-color: #529EE4 !important;
+    }
+
     .main {
         display: flex;
         flex-direction: column;
+        background-color: #529EE4 !important;
     }
 
     .main-container {
-        
+        background-color: #529EE4 !important;
         padding-top: 10%;
+        margin-top: -63px;
     }
-    
+
     .main-container-start {
-        margin-top: -2%;
+        background-color: #529EE4 !important;
+        margin-top: 10px;
     }
 
     .responsive-nav-container {
         width: 100%;
         display: block;
-        z-index: 4;
         background-color: #444444;
-
+        z-index: 2;
     }
 
-    .responsive-nav-container img{
+    .responsive-nav-container img {
         width: auto;
         height: 100px;
         margin-top: 2%;
-        
+
     }
 
     .responsive-nav {
@@ -43,54 +49,80 @@
 
     .quiz-card {
         top: -50px;
-    }  
+        width: 45rem !important;
+        margin: 5%;
+    }
 
 
 }
 
 @media (max-width: 750px) {
+    .main-container-start {
+        margin-top: -15px;
+    }
+    .main-container {
+        margin-top: -35px;
+    }
+}
 
-    .quiz-card {
-        width: 30rem !important;
-    }  
-
+@media (max-width: 650px) {
+    .main-container-start {
+        margin-top: -35px;
+    }
+    .main-container {
+        margin-top: -25px;
+    }
 }
 
 @media (max-width: 600px) {
-
-    .quiz-card {
-        width: 25rem !important;
-    }  
-
+    .main-container-start {
+        margin-top: -50px;
+    }
+    .main-container {
+        margin-top: -15px;
+    }
 }
 
 @media (max-width: 500px) {
+    .main-container-start {
+        margin-top: -70px;
+    }
+    .main-container {
+        margin-top: -30px;
+    }
+}
 
-    .quiz-card {
-        width: 20rem !important;
-        
-    }  
+@media (max-width: 450px) {
+    .main-container-start {
+        margin-top: -90px;
+    }
+    .main-container {
+        margin-top: -45px;
+    }
 
 }
 
-@media (max-width: 500px) {
-
-    .quiz-card {
-        width: 17.5rem !important;
-       
-    }  
-
-}
 
 @media (max-width: 350px) {
-
-    .quiz-card {
-        width: 15rem !important;
-       
-    }  
+    .main-container-start {
+        margin-top: -115px;
+    }
+    .main-container {
+        margin-top: -35px;
+    }
 
     .btn-primary {
         width: 90px;
     }
+}
 
+@media (max-width: 300px) {
+    .main-container-start {
+        margin-top: -130px;
+       
+    }
+
+    .main-container {
+        margin-top: -45px;
+    }
 }
